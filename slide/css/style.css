@@ -3,6 +3,10 @@
     src: url(./coolvetica.ttf);
 }
 
+.title-banner a {
+  color: #fff;
+}
+
 .title-banner {
     height: 40px;
     padding: 0 50px 5px 50px;
