@@ -8,6 +8,8 @@
 
 	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
 	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="css/dodecahedron.css"> <!-- Resource style -->
+
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
   	
     <link rel='shortcut icon' href='http://www.kappisan.com.s3-website-eu-west-1.amazonaws.com/img/logo5.png' type='image/x-icon'/ >
@@ -17,9 +19,52 @@
     <meta property="og:url" content="http://www.kappisan.com" />
     <meta property="og:image" content="http://www.kappisan.com/img/logo_rectangle.png" />
 
-
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
 
 	<title>Kasper Wilkosz</title>
+
+<style>
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.work-title {
+    font-family: coolvetica;
+    font-size: 44px;
+    position: relative;
+    margin: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 10px 0 40px 0;
+}
+
+</style>
+
+
+
+
+
 </head>
 <body>
 
@@ -104,10 +149,26 @@
 				</div>
 
 				<div class="cd-project-info">
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, quod dicta aliquid nemo repellendus distinctio minus dolor aperiam suscipit, ea enim accusantium, deleniti qui sequi sint nihil modi amet eligendi, quidem animi error labore voluptatibus sed. Qui magnam labore, iusto nostrum. Praesentium non, impedit accusantium consequatur officia architecto, mollitia placeat aperiam tenetur pariatur voluptatibus corrupti vitae deserunt!
-					</p>
-				</div> <!-- .cd-project-info -->
+					<h2 class="work-title">D3</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, quod dicta aliquid nemo repellendus distinctio minus dolor aperiam suscipit, ea enim accusantium, deleniti qui sequi sint nihil modi amet eligendi, quidem animi error labore voluptatibus sed. Qui magnam labore, iusto nostrum. Praesentium non, impedit accusantium consequatur officia architecto, mollitia placeat aperiam tenetur pariatur voluptatibus corrupti vitae deserunt!</p><br>
+					<center><div class="d3-bar-chart"></div></center>
+
+					<h2 class="work-title">CSS</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, quod dicta aliquid nemo repellendus distinctio minus dolor aperiam suscipit, ea enim accusantium, deleniti qui sequi sint nihil modi amet eligendi, quidem animi error labore voluptatibus sed. Qui magnam labore, iusto nostrum. Praesentium non, impedit accusantium consequatur officia architecto, mollitia placeat aperiam tenetur pariatur voluptatibus corrupti vitae deserunt!</p>
+
+					<!-- dodecahedron -->
+					<div class="view">
+					  <div class="plane main">
+					    <div class="circle"></div>
+					    <div class="circle"></div>
+					    <div class="circle"></div>
+					    <div class="circle"></div>
+					    <div class="circle"></div>
+					    <div class="circle"></div>
+					  </div>
+					</div>
+
+				</div>
 			</li>
 
 			<li>
@@ -124,7 +185,7 @@
 		</ul>
 
 		<button class="scroll cd-text-replace">Scroll</button>
-	</div> <!-- .cd-project-container -->
+	</div>
 
 	<nav class="cd-primary-nav" id="primary-nav">
 		<ul>
@@ -133,10 +194,122 @@
 			<li><a href="#0">Coding</a></li>
 			<li><a href="#0">Work</a></li>
 			<li><a href="#0">Blog</a></li>
+			<li><a href="#0">Archives</a></li>
 		</ul>
-	</nav> <!-- .cd-primary-nav -->
+	</nav>
 </div>
 <script src="js/jquery-2.1.1.js"></script>
-<script src="js/main.js"></script> <!-- Resource jQuery -->
+<script src="js/main.js"></script>
+<script src="js/dodecahedron.js"></script>
+
+<script>
+
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 800 - margin.left - margin.right,
+    height = 300 - margin.top - margin.bottom;
+
+var x = d3.scale.ordinal().rangeRoundBands([0, width], .1);
+var y = d3.scale.linear().range([height, 0]);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+    .ticks(10, "%");
+
+var svg = d3.select(".d3-bar-chart").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+svg.append("g")
+    .attr("class", "x axis")
+    .attr("transform", "translate(0," + height + ")")
+
+svg.append("g")
+    .attr("class", "y axis")
+  .append("text") // just for the title (ticks are automatic)
+    .attr("transform", "rotate(-90)") // rotate the text!
+    .attr("y", 6)
+    .attr("dy", ".71em")
+    .style("text-anchor", "end")
+    .text("Frequency");
+
+var data = [
+	{letter: "A", frequency: 28},
+	{letter: "B", frequency: 38},
+	{letter: "C", frequency: 55},
+	{letter: "D", frequency: 48},
+	{letter: "E", frequency: 23},
+	{letter: "F", frequency: 85},
+	{letter: "G", frequency: 37}
+];
+
+replay(data);
+
+function type(d) {
+  d.frequency = +d.frequency;
+  return d;
+}
+
+function replay(data) {
+  var slices = [];
+  for (var i = 0; i < data.length; i++) {
+    slices.push(data.slice(0, i+1));
+  }
+  slices.forEach(function(slice, index){
+    setTimeout(function(){
+      draw(slice);
+    }, index * 300);
+  });
+}
+
+function draw(data) {
+
+  x.domain(data.map(function(d) { return d.letter; }));
+  y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
+
+  svg.select('.x.axis').transition().duration(300).call(xAxis);
+
+  svg.select(".y.axis").transition().duration(300).call(yAxis)
+
+  var bars = svg.selectAll(".bar").data(data, function(d) { return d.letter; }) // (data) is an array/iterable thing, second argument is an ID generator function
+
+  bars.exit()
+    .transition()
+      .duration(300)
+    .attr("y", y(0))
+    .attr("height", height - y(0))
+    .style('fill-opacity', 1e-6)
+    .remove();
+
+  // data that needs DOM = enter() (a set/selection, not an event!)
+  bars.enter().append("rect")
+    .attr("class", "bar")
+    .attr("y", y(0))
+    .attr("height", height - y(0));
+
+  // the "UPDATE" set:
+  bars.transition().duration(300).attr("x", function(d) { return x(d.letter); })
+    .attr("width", x.rangeBand())
+    .attr("y", function(d) { return y(d.frequency); })
+    .attr("height", function(d) { return height - y(d.frequency); }); // flip the height, because y's domain is bottom up, but SVG renders top down
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
