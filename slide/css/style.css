@@ -9,7 +9,7 @@
     font-family: coolvetica;
     font-weight: 700;
     font-size: 36px;
-    animation: pulse 45s alternate infinite;
+    animation: pulse 60s alternate infinite;
 }
 
 @keyframes pulse {
@@ -20,7 +20,23 @@
   100% {background-color: #470d42;}
 }
 
+@keyframes pulseBG {
+  0% {background: #8c0000; box-shadow: 0 0 60px 2px #8c0000;}
+  25% {background: #13523d; box-shadow: 0 0 60px 2px #13523d;}
+  50% {background: #ad637c; box-shadow: 0 0 60px 2px #ad637c;}
+  75% {background: #30333c; box-shadow: 0 0 60px 2px #30333c;}
+  100% {background: #470d42; box-shadow: 0 0 60px 2px #470d42;}
+}
 
+@keyframes pulseBoxShadow {
+  0% {box-shadow: 0 0 60px #8c0000, inset 0 0 60px #8c0000;}
+  25% {box-shadow: 0 0 60px #13523d, inset 0 0 60px #13523d;}
+  50% {box-shadow: 0 0 60px #ad637c, inset 0 0 60px #ad637c;}
+  75% {box-shadow: 0 0 60px #30333c, inset 0 0 60px #30333c;}
+  100% {box-shadow: 0 0 60px #470d42, inset 0 0 60px #470d42;}
+}
+
+/* box-shadow: 0 0 60px crimson, inset 0 0 60px crimson; */
 
 
 .selfie-photo {
@@ -35,6 +51,173 @@
     position: relative;
     top: -340px;
 }
+
+
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.2); }
+
+
+
+
+
+
+
+
+
+
+
+/* Dodecahedron */
+
+.view {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-perspective: 400;
+          perspective: 400;
+}
+
+.plane {
+  width: 380px;
+  height: 380px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+.plane.main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  -webkit-transform: rotateX(60deg) rotateZ(-30deg);
+          transform: rotateX(60deg) rotateZ(-30deg);
+  -webkit-animation: rotate 20s infinite linear;
+          animation: rotate 20s infinite linear;
+}
+.plane.main .circle {
+  width: 380px;
+  height: 380px;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  border-radius: 100%;
+  box-sizing: border-box;
+  /*box-shadow: 0 0 60px crimson, inset 0 0 60px crimson;*/
+  animation: pulseBoxShadow 60s alternate infinite;
+}
+.plane.main .circle::before, .plane.main .circle::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 50%;
+  height: 50%;
+  border-radius: 100%;
+ /* background: crimson;*/
+  animation: pulseBG 60s alternate infinite;
+
+  box-sizing: border-box;
+
+  /*box-shadow: 0 0 60px 2px crimson;
+  animation: pulseBoxShadow 60s alternate infinite; */
+}
+.plane.main .circle::before {
+  -webkit-transform: translateZ(-90px);
+          transform: translateZ(-90px);
+}
+.plane.main .circle::after {
+  -webkit-transform: translateZ(90px);
+          transform: translateZ(90px);
+}
+.plane.main .circle:nth-child(1) {
+  -webkit-transform: rotateZ(72deg) rotateX(63.435deg);
+          transform: rotateZ(72deg) rotateX(63.435deg);
+}
+.plane.main .circle:nth-child(2) {
+  -webkit-transform: rotateZ(144deg) rotateX(63.435deg);
+          transform: rotateZ(144deg) rotateX(63.435deg);
+}
+.plane.main .circle:nth-child(3) {
+  -webkit-transform: rotateZ(216deg) rotateX(63.435deg);
+          transform: rotateZ(216deg) rotateX(63.435deg);
+}
+.plane.main .circle:nth-child(4) {
+  -webkit-transform: rotateZ(288deg) rotateX(63.435deg);
+          transform: rotateZ(288deg) rotateX(63.435deg);
+}
+.plane.main .circle:nth-child(5) {
+  -webkit-transform: rotateZ(360deg) rotateX(63.435deg);
+          transform: rotateZ(360deg) rotateX(63.435deg);
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotateX(0) rotateY(0) rotateZ(0);
+            transform: rotateX(0) rotateY(0) rotateZ(0);
+  }
+  100% {
+    -webkit-transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotateX(0) rotateY(0) rotateZ(0);
+            transform: rotateX(0) rotateY(0) rotateZ(0);
+  }
+  100% {
+    -webkit-transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+
+
+/* D3 BAR CHART */
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.work-title {
+    font-family: coolvetica;
+    font-size: 44px;
+    position: relative;
+    margin: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 10px 0 40px 0;
+}
+
 
 
 
@@ -97,7 +280,7 @@ Menu trigger
   width: 52px;
   border-radius: 50%;
 
-  animation: pulse 45s alternate infinite;
+  animation: pulse 60s alternate infinite;
 
   -webkit-transition: background 0.2s;
   -moz-transition: background 0.2s;
