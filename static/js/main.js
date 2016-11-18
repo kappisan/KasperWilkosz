@@ -6,6 +6,7 @@ jQuery(document).ready(function($){
 		projects = projectsContainer.find('.cd-projects'),
 		navigationTrigger = $('.cd-nav-trigger'),
 		navigation = $('.cd-primary-nav'),
+		titleHeading = $('.title-bar-heading')
 		//if browser doesn't support CSS transitions...
 		transitionsNotSupported = ( $('.no-csstransitions').length > 0);
 
@@ -24,9 +25,8 @@ jQuery(document).ready(function($){
 		}
 	});
 
-	navigationTrigger.on('click', function(event){
-		event.preventDefault();
-		
+	function openNavMenu() {
+		console.log("open nav menu");
 		if( animating == false ) {
 			animating = true;
 			if( navigationTrigger.hasClass('project-open') ) {
@@ -49,6 +49,22 @@ jQuery(document).ready(function($){
 		}	
 
 		if(transitionsNotSupported) animating = false;
+	}
+/*
+	document.getElementById("heading-title").addEventListener('click', function() {
+	    console.log('Hello world');
+	}, false);
+
+	titleHeading.on('click', function(event){
+		console.log("click title heading");
+
+		event.preventDefault();
+		openNavMenu();
+	});
+*/
+	navigationTrigger.on('click', function(event){
+		event.preventDefault();
+		openNavMenu();
 	});
 
 	//scroll down to project info

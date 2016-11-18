@@ -14,6 +14,7 @@
     font-weight: 700;
     font-size: 36px;
     animation: pulse 60s alternate infinite;
+    z-index: 999;
 }
 
 @keyframes pulse {

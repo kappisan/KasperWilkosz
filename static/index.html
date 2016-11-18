@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700|Merriweather:400italic,400' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/dodecahedron.css">
+
+	<script src="js/modernizr.js"></script>
+  	
+    <link rel='shortcut icon' href='./img/logo5.png'>
+
+    <meta property="og:title" content="kappisan" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.kappisan.com" />
+    <meta property="og:image" content="http://www.kappisan.com/img/logo_rectangle.png" />
+
+    <script type="text/javascript" src="./libs/d3.min.js"></script>
+    <script type="text/javascript" src="./libs/angular.min.js"></script>
+
+	<title>Kasper Wilkosz</title>
+</head>
+<body ng-app="" ng-init="firstName='Kasper Wilkosz'">
+
+<div class="title-banner" id="heading-title">
+	<h2 class="title-bar-heading">{{ firstName }}</h2>
+</div>
+
+<div>
+	<a class="cd-nav-trigger cd-text-replace" href="#primary-nav">Menu<span aria-hidden="true" class="cd-icon"></span></a>
+	
+	<div class="cd-projects-container">
+		<ul class="cd-projects-previews">
+			<li>
+				<a href="#0"><div class="cd-project-title"><h2>About</h2></div></a>
+			</li>
+
+			<li>
+				<a href="#0"><div class="cd-project-title"><h2>Coding</h2></div></a>
+			</li>
+			
+			<li>
+				<a href="#0"><div class="cd-project-title"><h2>Work</h2></div></a>
+			</li>
+			
+			<li>
+				<a href="#0"><div class="cd-project-title"><h2>Blog</h2></div></a>
+			</li>
+		</ul>
+
+		<ul class="cd-projects">
+			<li>
+				<div class="preview-image">
+					<div class="cd-project-title"><h2>About</h2></div> 
+				</div>
+
+				<div class="cd-project-info">
+					<ng-include src="'./pages/about.html'"></ng-include>
+				</div>
+			</li>
+
+			<li>
+				<div class="preview-image">
+					<div class="cd-project-title">
+						<h2>Coding</h2>
+					</div> 
+				</div>
+
+				<div class="cd-project-info">
+					<ng-include src="'./pages/coding.html'"></ng-include>
+				</div>
+			</li>
+
+			<li>
+				<div class="preview-image">
+					<div class="cd-project-title">
+						<h2>Work</h2>
+					</div> 
+				</div>
+
+				<div class="cd-project-info">
+					<ng-include src="'./pages/work.html'"></ng-include>
+				</div>
+			</li>
+
+			<li>
+				<div class="preview-image">
+					<div class="cd-project-title">
+						<h2>Blog</h2>
+					</div> 
+				</div>
+
+				<div class="cd-project-info">
+				<ng-include src="'./pages/blog.html'"></ng-include>
+				</div>
+			</li>
+		</ul>
+
+		<button class="scroll cd-text-replace">Scroll</button>
+	</div>
+
+	<nav class="cd-primary-nav" id="primary-nav">
+		<ul>
+			<li class="cd-label">Kasper Wilkosz</li>
+			<li><a href="#0">About</a></li>
+			<li><a href="#0">Coding</a></li>
+			<li><a href="#0">Work</a></li>
+			<li><a href="#0">Blog</a></li>
+			<li><a href="#0">Archives</a></li>
+		</ul>
+	</nav>
+</div>
+
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/main.js"></script>
+<script src="js/dodecahedron.js"></script>
+<script src="js/bar.js"></script>
+
+</body>
+</html>

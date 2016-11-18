@@ -1,9 +1,9 @@
-const PORT=4444; 
+const PORT=9999; 
 
 var express = require('express');
 var app = express();
 
-app.use(express.static('./'));
+app.use(express.static('./static/'));
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
