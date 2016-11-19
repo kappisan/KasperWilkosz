@@ -3,8 +3,18 @@
     src: url(./coolvetica.ttf);
 }
 
+.cool {
+  font-family: coolvetica;
+}
+
 .title-banner a {
   color: #fff;
+}
+
+.code-pre {
+    width: 800px;
+    position: relative;
+    margin: auto;
 }
 
 .title-banner {

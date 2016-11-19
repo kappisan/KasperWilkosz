@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/dodecahedron.css">
+	<link href="css/monokai.css" rel="stylesheet" type="text/css">
 
 	<script src="js/modernizr.js"></script>
   	
@@ -21,6 +22,9 @@
 
     <script type="text/javascript" src="./libs/d3.min.js"></script>
     <script type="text/javascript" src="./libs/angular.min.js"></script>
+
+    <script type="text/javascript" src="./libs/rainbow-custom.min.js"></script>
+    <script src="./libs/language/css.js"></script>
 
 	<title>Kasper Wilkosz</title>
 </head>
@@ -53,17 +57,100 @@
 		</ul>
 
 		<ul class="cd-projects">
-			<li><ng-include src="'./pages/about.html'"></ng-include></li>
+			<li>
+				<ng-include src="'./pages/about.html'"></ng-include>
+			</li>
 			<li><ng-include src="'./pages/coding.html'"></ng-include></li>
 			<li><ng-include src="'./pages/work.html'"></ng-include></li>
-			<li><ng-include src="'./pages/blog.html'"></ng-include></li>
+			<li>
+				<!--<ng-include src="'./pages/blog.html'"></ng-include>-->
+
+				<div class="preview-image">
+					<div class="cd-project-title">
+						<h2>Blog</h2>
+					</div> 
+				</div>
+
+				<div class="cd-project-info">
+				<!--
+					<h2 class="work-title">CSS Animations</h2>
+					<p>dodecahedron...</p>
+
+					<center>
+					<div class="view">
+						  <div class="plane main">
+							    <div class="circle"></div>
+							    <div class="circle"></div>
+							    <div class="circle"></div>
+							    <div class="circle"></div>
+							    <div class="circle"></div>
+							    <div class="circle"></div>
+						  </div>
+					</div>
+					</center>
+				-->
+				<h2 class="work-title">Optimum Change</h2>
+
+				<p>Below are 2 functions that will return the optimal amount of change for a given amount out of £1, 50p, 20p, 10p, 5p, 2p and 1p coins. The first function returns the optimal amount, whereas the second function returns the optimal amount from a finite amount of coins, here defined in the array 'quantities'.</p>
+				<p>If there are not enough coins to make up the desired amount the function will not return any coins and it will not remove any remaining coins, instead it will just print the message 'insufficient coinage'.
+
+				<p>JavaScript Code</p><br>
+<pre class="code-pre"><code data-language="JavaScript">
+var coins = [100, 50, 20, 10, 5, 2, 1];
+var quantities = [11, 24, 0, 99, 5, 2, 11];
+
+var unlimitedCoins = function(amount) {
+	var change = [];
+	var total = 0;
+
+	coins.forEach(function(coin) {
+		while (total + coin <= amount) {
+			change.push(coin);
+			total += coin;
+		}
+	});
+	return change;
+};
+
+var limitedCoins = function(amount) {
+	var change = [];
+	var total = 0;
+	var origionalQuantity = _.clone(quantities);
+	coins.forEach(function(coin, coinIndex) {
+		while (total + coin <= amount && quantities[coinIndex] > 0) {
+			quantities[coinIndex]--;
+			change.push(coin)
+			total += coin;
+		}
+	});
+	var sum = 0;
+	change.forEach(function(coin){
+		sum += coin;
+	});
+	if (sum != amount) {
+		quantities = origionalQuantity;
+		console.log("insufficient coinage");
+		return [];
+	}
+	return change;
+}
+</code></pre>
+
+
+				</div>
+
+
+
+
+
+			</li>
 		</ul>
 
 		<button class="scroll cd-text-replace">Scroll</button>
 	</div>
 
 	<nav class="cd-primary-nav" id="primary-nav">
-		<ul>
+		<ul class="cool">
 			<li class="cd-label">Kasper Wilkosz</li>
 			<li><a href="#0">About</a></li>
 			<li><a href="#0">Coding</a></li>
