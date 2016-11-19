@@ -53,51 +53,13 @@
 		</ul>
 
 		<ul class="cd-projects">
-			<li>
-				<div class="preview-image">
-					<div class="cd-project-title"><h2>About</h2></div> 
-				</div>
+			<li><ng-include src="'./pages/about.html'"></ng-include></li>
 
-				<div class="cd-project-info">
-					<ng-include src="'./pages/about.html'"></ng-include>
-				</div>
-			</li>
+			<li><ng-include src="'./pages/coding.html'"></ng-include></li>
 
-			<li>
-				<div class="preview-image">
-					<div class="cd-project-title">
-						<h2>Coding</h2>
-					</div> 
-				</div>
+			<li><ng-include src="'./pages/work.html'"></ng-include></li>
 
-				<div class="cd-project-info">
-					<ng-include src="'./pages/coding.html'"></ng-include>
-				</div>
-			</li>
-
-			<li>
-				<div class="preview-image">
-					<div class="cd-project-title">
-						<h2>Work</h2>
-					</div> 
-				</div>
-
-				<div class="cd-project-info">
-					<ng-include src="'./pages/work.html'"></ng-include>
-				</div>
-			</li>
-
-			<li>
-				<div class="preview-image">
-					<div class="cd-project-title">
-						<h2>Blog</h2>
-					</div> 
-				</div>
-
-				<div class="cd-project-info">
-				<ng-include src="'./pages/blog.html'"></ng-include>
-				</div>
-			</li>
+			<li><ng-include src="'./pages/blog.html'"></ng-include></li>
 		</ul>
 
 		<button class="scroll cd-text-replace">Scroll</button>
