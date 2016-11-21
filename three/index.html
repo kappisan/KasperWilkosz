@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>three.js canvas - combo camera - orthographic + perspective</title>
+		<title>köpstadsö</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<style>
@@ -23,11 +23,14 @@
 		<script src="./three.min.js"></script>
 
 		<script src="js/cameras/CombinedCamera.js"></script>
-
+		<script src="js/loaders/ColladaLoader.js"></script>
 		<script src="js/renderers/Projector.js"></script>
 		<script src="js/renderers/CanvasRenderer.js"></script>
 
 		<script src="js/libs/stats.min.js"></script>
+
+
+<!--
 		<div style="position: absolute; top: 10px; width: 100%; text-align: center; ">
 			<a href="http://threejs.org" target="_blank">three.js</a> - Combo Camera<br>
 			View: <a href="#" onclick="setOrthographic();return false;"> Orthographic</a> |
@@ -55,7 +58,7 @@
 				<br/>
 			<div id="fov"></div>
 		</div>
-
+-->
 
 
 		<script>
@@ -67,7 +70,6 @@
 
 			init();
 			animate();
-
 
 
 			function setLens( lens ) {
@@ -109,14 +111,14 @@
 					geometry.vertices.push( new THREE.Vector3( i, 0, - size ) );
 					geometry.vertices.push( new THREE.Vector3( i, 0,   size ) );
 				}
-				var material = new THREE.LineBasicMaterial( { color: 0x000000, opacity: 0.2 } );
+				var material = new THREE.LineBasicMaterial( { color: 0x00aa00, opacity: 0.2 } );
 				var line = new THREE.LineSegments( geometry, material );
 				scene.add( line );
 
-
 			    var loader = new THREE.JSONLoader();
 			    loader.load('./köpstadsö_house.json', function(geometry, materials) {
-    				mesh = new THREE.Mesh(geometry);
+
+    				mesh = new THREE.Mesh(geometry, new THREE.MeshFaceMaterial(materials));
 			        mesh.scale.set( 20, 20, 20 );
 			        scene.add(mesh);
 
@@ -125,8 +127,8 @@
 
 				// Lights
 
-				var ambientLight = new THREE.AmbientLight( Math.random() * 0x10 );
-				scene.add( ambientLight );
+			    var light = new THREE.AmbientLight(0xffffff);
+			    scene.add(light);
 
 				var directionalLight = new THREE.DirectionalLight( Math.random() * 0xffffff );
 				directionalLight.position.x = Math.random() - 0.5;
@@ -163,8 +165,6 @@
 				}
 			}
 
-			//
-
 			function animate() {
 
 				requestAnimationFrame( animate );
@@ -177,7 +177,7 @@
 
 			function render() {
 
-				var timer = Date.now() * 0.0001;
+				var timer = Date.now() * 0.0005;
 				camera.position.x = Math.cos( timer ) * 200;
 				camera.position.z = Math.sin( timer ) * 200;
 				if ( lookAtScene ) camera.lookAt( scene.position );
