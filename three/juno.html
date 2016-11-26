@@ -160,12 +160,29 @@
 
 				requestAnimationFrame( animate );
 
+				raycaster.setFromCamera( mouse, camera );
+
+				intersects = raycaster.intersectObjects( scene.children );
+
+				console.log("group", group);
+
+				if ( intersects.length > 0 ) {
+					console.log("intersects", intersects);
+				}
+
+
 				render();
 				stats.update();
 
 			}
 
 			function render() {
+
+
+
+
+
+
 
 				camera.position.x += ( mouseX - camera.position.x ) * 0.01;
 				camera.position.y += ( - mouseY - camera.position.y ) * 0.01;

@@ -18,21 +18,20 @@
 }
 
 .title-banner {
-    height: 40px;
-    padding: 0 50px 5px 50px;
+height: 54px;
+    padding: 6px 50px 5px 50px;
     font-family: coolvetica;
     font-weight: 700;
     font-size: 36px;
-    animation: pulse 60s alternate infinite;
     z-index: 999;
+
+    letter-spacing: 1.5px;
 }
 
 @keyframes pulse {
-  0% {background-color: #8c0000;}
-  25% {background-color: #13523d;}
-  50% {background-color: #ad637c;}
-  75% {background-color: #30333c;}
-  100% {background-color: #470d42;}
+  0% {color: #c3ddd6;}
+  50% {color: #f4b794;}
+  100% {color: #f6cac9;}
 }
 
 @keyframes pulseBG {
@@ -693,7 +692,7 @@ Projects
   transition: transform 0.3s 0.3s;
 }
 .cd-project-title h2 {
-  font-size: 5rem;
+  font-size: 38px;
 }
 .cd-project-title p {
   font-size: 1.4rem;
