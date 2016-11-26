@@ -11,6 +11,12 @@
   color: #fff;
 }
 
+
+
+.lime-green {
+  color: #41b6ab;
+}
+
 .code-pre {
     width: 800px;
     position: relative;
@@ -27,6 +33,17 @@ height: 54px;
 
     letter-spacing: 1.5px;
 }
+
+.blog-date {
+    color: #f05442;
+    font-family: coolvetica;
+    margin: 2px 40px 2px 40px;
+    /* right: 0; */
+    font-size: 20pt;
+    position: relative;
+    top: -72px;
+}
+
 
 @keyframes pulse {
   0% {color: #c3ddd6;}
@@ -54,10 +71,11 @@ height: 54px;
 
 
 .selfie-photo {
-  position: relative;
+    position: relative;
+    width: 270px;
     word-wrap: normal;
     left: 20px;
-  display: inline-block;
+    display: inline-block;
 }
 
 .right-text {
@@ -288,19 +306,14 @@ Menu trigger
 
 -------------------------------- */
 .cd-nav-trigger {
-  position: absolute;
-  z-index: 4;
-  top: 64px;
-  right: 5%;
-  height: 52px;
-  width: 52px;
-  border-radius: 50%;
+position: absolute;
+    z-index: 4;
+    top: 0px;
+    right: 5%;
+    height: 52px;
+    width: 52px;
+    border-radius: 50%;
 
-  animation: pulse 60s alternate infinite;
-
-  -webkit-transition: background 0.2s;
-  -moz-transition: background 0.2s;
-  transition: background 0.2s;
 }
 .cd-nav-trigger .cd-icon,
 .cd-nav-trigger .cd-icon::before,

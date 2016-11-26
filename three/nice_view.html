@@ -208,6 +208,59 @@
 
 
 
+				// skybox
+
+				var sides = [
+					{
+						url: 'img/galaxybox/posx.jpg',
+						position: [ -512, 0, 0 ],
+						rotation: [ 0, Math.PI / 2, 0 ]
+					},
+					{
+						url: 'img/galaxybox/negx.jpg',
+						position: [ 512, 0, 0 ],
+						rotation: [ 0, -Math.PI / 2, 0 ]
+					},
+					{
+						url: 'img/galaxybox/posy.jpg',
+						position: [ 0,  512, 0 ],
+						rotation: [ Math.PI / 2, 0, Math.PI ]
+					},
+					{
+						url: 'img/galaxybox/negy.jpg',
+						position: [ 0, -512, 0 ],
+						rotation: [ - Math.PI / 2, 0, Math.PI ]
+					},
+					{
+						url: 'img/galaxybox/posz.jpg',
+						position: [ 0, 0,  512 ],
+						rotation: [ 0, Math.PI, 0 ]
+					},
+					{
+						url: 'img/galaxybox/negz.jpg',
+						position: [ 0, 0, -512 ],
+						rotation: [ 0, 0, 0 ]
+					}
+				];
+
+				for ( var i = 0; i < sides.length; i ++ ) {
+
+					var side = sides[ i ];
+
+					var element = document.createElement( 'img' );
+					element.width = 1026; // 2 pixels extra to close the gap.
+					element.src = side.url;
+
+					var object = new THREE.CSS3DObject( element );
+					object.position.fromArray( side.position );
+					object.rotation.fromArray( side.rotation );
+
+					console.log("object", object);
+
+					scene.add( object );
+
+				}
+
 			    var loader = new THREE.JSONLoader();
 			    loader.load('./köpstadsö_house.json', function(geometry, materials) {
 

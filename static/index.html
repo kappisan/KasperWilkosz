@@ -27,8 +27,9 @@
     <script src="./libs/language/css.js"></script>
 
 	<title>Kasper Wilkosz</title>
+
 </head>
-<body ng-app="" ng-init="firstName='Kasper Wilkosz'">
+<body ng-app="myApp" ng-init="firstName='Kasper Wilkosz'" ng-controller="pageController">
 
 <div class="title-banner" id="heading-title">
 	<h2 class="title-bar-heading">{{ firstName }}</h2>
@@ -44,7 +45,7 @@
 			</li>
 
 			<li>
-				<a href="#0"><div class="cd-project-title"><h2>Coding</h2></div></a>
+				<a href="#0"><div class="cd-project-title"><h2>Blog</h2></div></a>
 			</li>
 			
 			<li>
@@ -52,7 +53,7 @@
 			</li>
 			
 			<li>
-				<a href="#0"><div class="cd-project-title"><h2>Blog</h2></div></a>
+				<a href="#0"><div class="cd-project-title"><h2>Coding</h2></div></a>
 			</li>
 		</ul>
 
@@ -60,8 +61,6 @@
 			<li>
 				<ng-include src="'./pages/about.html'"></ng-include>
 			</li>
-			<li><ng-include src="'./pages/coding.html'"></ng-include></li>
-			<li><ng-include src="'./pages/work.html'"></ng-include></li>
 			<li>
 				<!--<ng-include src="'./pages/blog.html'"></ng-include>-->
 
@@ -90,11 +89,19 @@
 					</center>
 				-->
 				<h2 class="work-title">Exporting Blender to Three JS</h2>
+				<h3 class="blog-date">12/11/2016</h3>
+
+				<center><a href="http://kopstadso.s3-website-eu-west-1.amazonaws.com/blender/" target="_blank"><img src="./img/blender_threejs.png"></a></center><br><br>
+
 				<p>It is posible to export models from blender directly to three.js.</p>
-				<p><a href="http://kopstadso.s3-website-eu-west-1.amazonaws.com/blender/" target="_blank">Click here</a> to view a blender model inside three js.</p><br>
-				<center><a href="http://kopstadso.s3-website-eu-west-1.amazonaws.com/blender/" target="_blank"><img src="./img/blender_threejs.png"></a></center><br><hr><br>
+				<p><a href="http://kopstadso.s3-website-eu-west-1.amazonaws.com/blender/" target="_blank">Click here</a> to view a blender model inside three js.</p>
+
+				<br><br><br><br><br><br><br><br><br>
+				<br><br><br><br><br><br><br><br><br>
+
 
 				<h2 class="work-title">Optimum Change</h2>
+				<h3 class="blog-date">05/11/2016</h3>
 
 				<p>Below are 2 functions that will return the optimal amount of change for a given amount out of £1, 50p, 20p, 10p, 5p, 2p and 1p coins. The first function returns the optimal amount, whereas the second function returns the optimal amount from a finite amount of coins, here defined in the array 'quantities'.</p>
 				<p>If there are not enough coins to make up the desired amount the function will not return any coins and it will not remove any remaining coins, instead it will just print the message 'insufficient coinage'.
@@ -149,6 +156,10 @@ var limitedCoins = function(amount) {
 
 
 			</li>
+			<li><ng-include src="'./pages/work.html'"></ng-include></li>
+
+			<li><ng-include src="'./pages/coding.html'"></ng-include></li>
+
 		</ul>
 
 		<button class="scroll cd-text-replace">Scroll</button>
@@ -170,6 +181,22 @@ var limitedCoins = function(amount) {
 <script src="js/main.js"></script>
 <script src="js/dodecahedron.js"></script>
 <script src="js/bar.js"></script>
+
+<script type="text/javascript">
+	
+	var myApp = angular.module('myApp',[]);
+
+
+
+	myApp.controller('pageController', ['$scope', function($scope) {
+	  console.log('Hola!');
+
+	  $scope.isAbout = false;
+
+	}]);
+
+
+</script>
 
 
 
