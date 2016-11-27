@@ -4,14 +4,16 @@
 }
 
 .cool {
-  font-family: coolvetica;
+  font-family: coolvetica !important;
 }
 
 .title-banner a {
   color: #fff;
 }
 
-
+li {
+  font-family: coolvetica;
+}
 
 .lime-green {
   color: #41b6ab;
@@ -22,6 +24,11 @@
     position: relative;
     margin: auto;
 }
+
+.nav-menu-item {
+  margin: 2px 20px 2px 20px;
+}
+
 
 .title-banner {
 height: 54px;
@@ -68,7 +75,6 @@ height: 54px;
 }
 
 /* box-shadow: 0 0 60px crimson, inset 0 0 60px crimson; */
-
 
 .selfie-photo {
     position: relative;
@@ -951,7 +957,7 @@ li.selected .cd-project-title,
   height: 100%;
   width: 100%;
   overflow: auto;
-  text-align: center;
+  text-align: left;
   opacity: 0;
   -webkit-transition: opacity 0.6s;
   -moz-transition: opacity 0.6s;
@@ -972,7 +978,9 @@ li.selected .cd-project-title,
   -moz-transition: background 0.2s;
   transition: background 0.2s;
   color: #ffffff;
-  font-family: "Merriweather", serif;
+  font-family: coolvetica;
+  text-align: left !important;
+  letter-spacing: 1.5px;
   font-size: 2.4rem;
   font-weight: 700;
   -webkit-font-smoothing: antialiased;
@@ -1018,7 +1026,8 @@ li.selected .cd-project-title,
 }
 @media only screen and (min-width: 1170px) {
   .cd-primary-nav a {
-    font-size: 4rem;
+    font-size: 36px;
+    margin: 2px 18px 2px 14px;
   }
 }
 
