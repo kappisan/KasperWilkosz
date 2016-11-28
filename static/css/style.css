@@ -42,13 +42,12 @@ height: 54px;
 }
 
 .blog-date {
-    color: #f05442;
+    color: #222222;
     font-family: coolvetica;
     margin: 2px 40px 2px 40px;
-    /* right: 0; */
     font-size: 20pt;
     position: relative;
-    top: -72px;
+    top: -82px;
 }
 
 
