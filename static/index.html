@@ -33,7 +33,7 @@
 	<style type="text/css">
 
 		.svgmap, #map-container {
-			background-color: #41b6ab;
+			background-color: #fff;
 		}
 
 		path:hover {
@@ -55,24 +55,24 @@
 </div>
 
 <div>
-	<a class="cd-nav-trigger cd-text-replace" href="#primary-nav">Menu<span aria-hidden="true" class="cd-icon"></span></a>
+	<a id="hamburger" class="cd-nav-trigger cd-text-replace" href="#primary-nav" onclick="makeTitleWhite()">Menu<span aria-hidden="true" class="cd-icon"></span></a>
 	
 	<div class="cd-projects-container">
 		<ul class="cd-projects-previews">
 			<li>
-				<a href="#0" onclick="makeTitleGreen()"><div class="cd-project-title"><h2>About</h2></div></a>
+				<a href="#0" onclick="goToAbout()"><div class="cd-project-title"><h2>About</h2></div></a>
 			</li>
 
 			<li>
-				<a href="#0" onclick="makeTitleOrange()"><div class="cd-project-title"><h2>Blog</h2></div></a>
+				<a href="#0" onclick="goToBlog()"><div class="cd-project-title"><h2>Blog</h2></div></a>
 			</li>
 			
 			<li>
-				<a href="#0" onclick="makeTitleEmerald()"><div class="cd-project-title"><h2>Work</h2></div></a>
+				<a href="#0" onclick="goToWork()"><div class="cd-project-title"><h2>Work</h2></div></a>
 			</li>
 			
 			<li>
-				<a href="#0" onclick="makeTitleHoney()"><div class="cd-project-title"><h2>Coding</h2></div></a>
+				<a href="#0" onclick="goToCoding()"><div class="cd-project-title"><h2>Coding</h2></div></a>
 			</li>
 		</ul>
 
@@ -216,24 +216,34 @@ var limitedCoins = function(amount) {
 
 <script type="text/javascript">
 	
-	function makeTitleGreen() {
+	function goToAbout() {
 		console.log("we are on the about page");
 
-		$("#heading-title").css("color", "#41b6ab");
+		$("#heading-title").addClass("turquoise");
+		$("#hamburger").css("background-color", "#41b6ab");
+		$("#map-container").css("display", "visible");
 	}
 
-	function makeTitleOrange () {
-		$("#heading-title").css("color", "#f05442");
+	function goToBlog () {
+		$("#heading-title").addClass("tangerine");
+		$("#hamburger").css("background-color", "#f05442");
 	}
 
-	function makeTitleEmerald () {
-		$("#heading-title").css("color", "#169c78");
+	function goToWork () {
+		$("#heading-title").addClass("emerald");
+		$("#hamburger").css("background-color", "#169c78");
 	} 
 
-	function makeTitleHoney () {
-		$("#heading-title").css("color", "#da4f70");
+	function goToCoding () {
+		$("#heading-title").addClass("honeysuckle");
+		$("#hamburger").css("background-color", "#da4f70");
 	} 
 
+	function makeTitleWhite () {
+		$("#heading-title").removeClass().addClass("title-banner");
+		$("#hamburger").css("background-color", "#222");
+		window.scrollTo(0, 0);
+	} 
 
 	var myApp = angular.module('myApp',[]);
 

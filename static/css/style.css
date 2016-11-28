@@ -3,6 +3,43 @@
     src: url(./coolvetica.ttf);
 }
 
+/* color scheme */
+/*
+#41b6ab - turquoise
+#f05442 - tangerine tango
+#169c78 - emerald
+#da4f70 - honeysuckle
+*/
+
+.turquoise {
+  color: #41b6ab;
+}
+.tangerine {
+  color: #f05442;
+}
+.emerald {
+  color: #169c78;
+}
+.honeysuckle {
+  color: #da4f70;
+}
+
+.turquoiseBG {
+  background-color: #41b6ab;
+}
+.tangerineBG {
+  background-color: #f05442;
+}
+.emeraldBG {
+  background-color: #169c78;
+}
+.honeysuckleBG {
+  background-color: #da4f70;
+}
+
+
+
+
 .cool {
   font-family: coolvetica !important;
 }
@@ -146,7 +183,7 @@ height: 54px;
   border-radius: 100%;
   box-sizing: border-box;
   /*box-shadow: 0 0 60px crimson, inset 0 0 60px crimson;*/
-  animation: pulseBoxShadow 60s alternate infinite;
+  animation: pulseBoxShadow 20s alternate infinite;
 }
 .plane.main .circle::before, .plane.main .circle::after {
   content: "";
@@ -161,7 +198,7 @@ height: 54px;
   height: 50%;
   border-radius: 100%;
  /* background: crimson;*/
-  animation: pulseBG 60s alternate infinite;
+  animation: pulseBG 20s alternate infinite;
 
   box-sizing: border-box;
 
@@ -311,15 +348,15 @@ Menu trigger
 
 -------------------------------- */
 .cd-nav-trigger {
-position: absolute;
+    position: absolute;
     z-index: 4;
-    top: 0px;
+    top: 7px;
     right: 5%;
-    height: 52px;
-    width: 52px;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
-
 }
+
 .cd-nav-trigger .cd-icon,
 .cd-nav-trigger .cd-icon::before,
 .cd-nav-trigger .cd-icon::after {
