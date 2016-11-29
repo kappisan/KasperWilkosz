@@ -68,14 +68,16 @@ li {
 
 
 .title-banner {
-height: 54px;
+    height: 54px;
     padding: 6px 50px 5px 50px;
     font-family: coolvetica;
     font-weight: 700;
     font-size: 36px;
-    z-index: 999;
-
+    z-index: 4;
     letter-spacing: 1.5px;
+    position: fixed;
+    background-color: #222;
+    width: 100%;
 }
 
 .blog-date {
@@ -1055,7 +1057,7 @@ li.selected .cd-project-title,
   opacity: 1;
 }
 .cd-primary-nav.nav-clickable {
-  z-index: 3;
+  z-index: 2;
 }
 .no-csstransitions .cd-primary-nav.nav-visible {
   z-index: 3;

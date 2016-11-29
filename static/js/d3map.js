@@ -35,6 +35,21 @@ d3.json("./map.json", function(json) {
 	   .enter()
 	   .append("path")
 	   .attr("d", path)
-	   .attr("stroke", "rgba(8, 81, 156, 0.2)")
-	   .attr("fill", "rgba(8, 81, 156, 0.6)");
+	   .on("mouseover", function(d, i){  
+	   		if(i == 14) {
+	   			console.log("uk", i);
+	   		}
+	   		else if(i == 30) {
+	   			console.log("poland", i);
+	   		}
+	   		else if(i == 36) {
+	   			console.log("sweden", i);
+	   		}
+	   		else {
+	   			console.log("other country", i);
+	   		}
+	   })
+	   .attr("stroke", "#222")
+	   .attr("class", function(d, i){ return "country-" + i; })
+	   .attr("fill", "#41b6ab");
 });

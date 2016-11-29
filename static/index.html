@@ -50,7 +50,7 @@
 </head>
 <body ng-app="myApp" ng-init="firstName='Kasper Wilkosz'" ng-controller="pageController">
 
-<div class="title-banner" id="heading-title">
+<div class="title-banner" id="heading-title" onclick="clickTitle()">
 	<h2 class="title-bar-heading">{{ firstName }}</h2>
 </div>
 
@@ -216,6 +216,21 @@ var limitedCoins = function(amount) {
 
 <script type="text/javascript">
 	
+	function eventFire(el, etype){
+	  if (el.fireEvent) {
+	    el.fireEvent('on' + etype);
+	  } else {
+	    var evObj = document.createEvent('Events');
+	    evObj.initEvent(etype, true, false);
+	    el.dispatchEvent(evObj);
+	  }
+	}
+
+	function clickTitle() {
+		console.log("clickTitle()");
+		eventFire(document.getElementById('hamburger'), 'click');
+	}
+
 	function goToAbout() {
 		console.log("we are on the about page");
 
@@ -244,6 +259,8 @@ var limitedCoins = function(amount) {
 		$("#hamburger").css("background-color", "#222");
 		window.scrollTo(0, 0);
 	} 
+
+	/* ANGULAR */
 
 	var myApp = angular.module('myApp',[]);
 
