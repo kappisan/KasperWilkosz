@@ -112,6 +112,20 @@ li {
   100% {box-shadow: 0 0 60px #470d42, inset 0 0 60px #470d42;}
 }
 
+/* d3 hover map info box */
+.infobox-text {
+  fill: #FFF;
+  font-size: 26px;
+}
+
+.infobox-lang-text {
+  fill: #FFF;
+  font-size: 18px;
+  font-family: helvetica;
+
+}
+
+
 /* box-shadow: 0 0 60px crimson, inset 0 0 60px crimson; */
 
 .selfie-photo {
