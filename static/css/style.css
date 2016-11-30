@@ -15,16 +15,20 @@ svg {
 #da4f70 - honeysuckle
 */
 
-.turquoise {
+.turquoise,
+.turquoiseHover:hover {
   color: #41b6ab;
 }
-.tangerine {
+.tangerine,
+.tangerineHover:hover {
   color: #f05442;
 }
-.emerald {
+.emerald,
+.emeraldHover:hover {
   color: #169c78;
 }
-.honeysuckle {
+.honeysuckle,
+.honeysuckleHover:hover {
   color: #da4f70;
 }
 
@@ -41,7 +45,14 @@ svg {
   background-color: #da4f70;
 }
 
+.greyHover:hover {
+  color: #999;
+}
 
+.link-menu {
+  width: 500px;
+  margin: auto;
+}
 
 
 .cool {
@@ -1049,10 +1060,7 @@ li.selected .cd-project-title,
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.no-touch .cd-primary-nav a:hover {
-  animation: pulse 10s alternate infinite;
 
-}
 .cd-primary-nav .cd-label {
   position: relative;
   margin: 2.4em 0 2em;
