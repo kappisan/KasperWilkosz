@@ -96,6 +96,10 @@ li {
     top: -82px;
 }
 
+.image-credit {
+  font-size: 16px;
+  text-align: left;
+}
 
 @keyframes pulse {
   0% {color: #c3ddd6;}
