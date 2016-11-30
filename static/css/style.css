@@ -3,6 +3,10 @@
     src: url(./coolvetica.ttf);
 }
 
+svg {
+  display: block;
+}
+
 /* color scheme */
 /*
 #41b6ab - turquoise
@@ -66,6 +70,9 @@ li {
   margin: 2px 20px 2px 20px;
 }
 
+.map-legend-text {
+  fill: #222;
+}
 
 .title-banner {
     height: 54px;
