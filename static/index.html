@@ -45,6 +45,10 @@
 			color: #f05442;
 		}
 
+		.blog-post {
+			margin: 160px 60px;
+		}
+
 	</style>
 
 </head>
@@ -148,26 +152,24 @@
 					</div>
 					</center>
 				-->
+				<div class="blog-post">
+					<h2 class="work-title blog-title">Exporting Blender to Three JS</h2>
+					<h3 class="blog-date">12/11/2016</h3>
 
-				<h2 class="work-title blog-title">Exporting Blender to Three JS</h2>
-				<h3 class="blog-date">12/11/2016</h3>
+					<center><a href="http://kopstadso.s3-website-eu-west-1.amazonaws.com/blender/" target="_blank"><img src="./img/blender_threejs.png"></a></center><br><br>
 
-				<center><a href="http://kopstadso.s3-website-eu-west-1.amazonaws.com/blender/" target="_blank"><img src="./img/blender_threejs.png"></a></center><br><br>
+					<p>It is posible to export models from blender directly to three.js.</p>
+					<p><a class="tangerine" href="http://kopstadso.s3-website-eu-west-1.amazonaws.com/blender/" target="_blank">Click here</a> to view a blender model that has been exported from blender using the blender three.js exporter and loaded and rendered inside three js.</p>
+				</div>
 
-				<p>It is posible to export models from blender directly to three.js.</p>
-				<p><a class="tangerine" href="http://kopstadso.s3-website-eu-west-1.amazonaws.com/blender/" target="_blank">Click here</a> to view a blender model that has been exported from blender using the blender three.js exporter and loaded and rendered inside three js.</p>
+				<div class="blog-post">
+					<h2 class="work-title blog-title">Optimum Change</h2>
+					<h3 class="blog-date">05/11/2016</h3>
 
-				<br><br><br><br><br><br><br><br><br>
-				<br><br><br><br><br>
+					<p>Below are 2 functions that will return the optimal amount of change for a given amount out of £1, 50p, 20p, 10p, 5p, 2p and 1p coins. The first function returns the optimal amount, whereas the second function returns the optimal amount from a finite amount of coins, here defined in the array 'quantities'.</p>
+					<p>If there are not enough coins to make up the desired amount the function will not return any coins and it will not remove any remaining coins, instead it will just print the message 'insufficient coinage'.
 
-
-				<h2 class="work-title blog-title">Optimum Change</h2>
-				<h3 class="blog-date">05/11/2016</h3>
-
-				<p>Below are 2 functions that will return the optimal amount of change for a given amount out of £1, 50p, 20p, 10p, 5p, 2p and 1p coins. The first function returns the optimal amount, whereas the second function returns the optimal amount from a finite amount of coins, here defined in the array 'quantities'.</p>
-				<p>If there are not enough coins to make up the desired amount the function will not return any coins and it will not remove any remaining coins, instead it will just print the message 'insufficient coinage'.
-
-				<p>JavaScript Code</p><br>
+					<p>JavaScript Code</p><br>
 <pre class="code-pre"><code data-language="JavaScript">
 var coins = [100, 50, 20, 10, 5, 2, 1];
 var quantities = [11, 24, 0, 99, 5, 2, 11];
@@ -210,9 +212,8 @@ var limitedCoins = function(amount) {
 </code></pre>
 
 
-				</div>
-
-
+				</div><!-- end blog-post -->
+</div><!-- end cd-project-info -->
 
 
 
