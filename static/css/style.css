@@ -156,6 +156,7 @@ li {
     word-wrap: normal;
     left: 20px;
     display: inline-block;
+    margin: 40px;
 }
 
 .right-text {
@@ -1125,3 +1126,5 @@ JavaScript Disabled
 .no-js .cd-primary-nav li:not(.cd-label) {
   display: inline-block;
 }
+
+
