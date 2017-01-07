@@ -10,6 +10,11 @@ jQuery(document).ready(function($){
 		//if browser doesn't support CSS transitions...
 		transitionsNotSupported = ( $('.no-csstransitions').length > 0);
 
+	var about = $('.contents-about'),
+		work = $('.contents-work'),
+		coding = $('.contents-coding'),
+		blog = $('.contents-blog');
+
 	var animating = false,
 		//will be used to extract random numbers for projects slide up/slide down effect
 		numRandoms = projects.find('li').length, 
@@ -62,6 +67,38 @@ jQuery(document).ready(function($){
 		openNavMenu();
 	});
 */
+	about.on('click', function(event){
+		event.preventDefault();
+		console.log("clicked about");
+		//close main navigation
+		openNavMenu();
+		setTimeout(function() {openProject($("#goToAbout").parent('li'))}, 1200);
+	});
+
+	blog.on('click', function(event){
+		event.preventDefault();
+		console.log("clicked blog");
+		//close main navigation
+		openNavMenu();
+		setTimeout(function() {openProject($("#goToBlog").parent('li'))}, 1200);
+	});
+
+	work.on('click', function(event){
+		event.preventDefault();
+		console.log("clicked work");
+		//close main navigation
+		openNavMenu();
+		setTimeout(function() {openProject($("#goToWork").parent('li'))}, 1200);
+	});
+
+	coding.on('click', function(event){
+		event.preventDefault();
+		console.log("clicked coding");
+		//close main navigation
+		openNavMenu();
+		setTimeout(function() {openProject($("#goToCoding").parent('li'))}, 1200);
+	});
+
 	navigationTrigger.on('click', function(event){
 		event.preventDefault();
 		openNavMenu();

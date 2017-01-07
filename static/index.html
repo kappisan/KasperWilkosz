@@ -70,19 +70,19 @@
 	<div class="cd-projects-container">
 		<ul class="cd-projects-previews">
 			<li>
-				<a href="#0" onclick="goToAbout()"><div class="cd-project-title"><h2>About</h2></div></a>
+				<a id="goToAbout" href="#0" onclick="goToAbout()"><div class="cd-project-title"><h2>About</h2></div></a>
 			</li>
 
 			<li>
-				<a href="#0" onclick="goToBlog()"><div class="cd-project-title"><h2>Blog</h2></div></a>
+				<a id="goToBlog" href="#0" onclick="goToBlog()"><div class="cd-project-title"><h2>Blog</h2></div></a>
 			</li>
 			
 			<li>
-				<a href="#0" onclick="goToWork()"><div class="cd-project-title"><h2>Work</h2></div></a>
+				<a id="goToWork" href="#0" onclick="goToWork()"><div class="cd-project-title"><h2>Work</h2></div></a>
 			</li>
 			
 			<li>
-				<a href="#0" onclick="goToCoding()"><div class="cd-project-title"><h2>Coding</h2></div></a>
+				<a id="goToCoding" href="#0" onclick="goToCoding()"><div class="cd-project-title"><h2>Coding</h2></div></a>
 			</li>
 		</ul>
 
@@ -219,8 +219,6 @@ var limitedCoins = function(amount) {
 				</div><!-- end blog-post -->
 </div><!-- end cd-project-info -->
 
-
-
 			</li>
 
 <!-- WORK --> 
@@ -239,11 +237,21 @@ var limitedCoins = function(amount) {
 		<ul class="cool">
 			<br><br><br><br><br>
 			<div class="link-menu">
-				<li><a href="#0" class="nav-menu-item turquoiseHover">About</a></li>
-				<li><a href="#0" class="nav-menu-item tangerineHover">Coding</a></li>
-				<li><a href="#0" class="nav-menu-item emeraldHover">Work</a></li>
-				<li><a href="#0" class="nav-menu-item honeysuckleHover">Blog</a></li>
-				<li><a href="#0" class="nav-menu-item greyHover">Archives</a></li>
+				<li class="li-about">
+					<a href="#0" onclick="goToAbout()" class="contents-about nav-menu-item turquoiseHover">About</a>
+				</li>
+				<li class="li-coding">
+					<a href="#0" onclick="goToBlog()" class="contents-coding nav-menu-item tangerineHover">Coding</a>
+				</li>
+				<li class="li-work">
+					<a href="#0" onclick="goToWork()" class="contents-work nav-menu-item emeraldHover">Work</a>
+				</li>
+				<li class="li-blog">
+					<a href="#0" onclick="goToCoding()" class="contents-blog nav-menu-item honeysuckleHover">Blog</a>
+				</li>
+				<li>
+					<a href="#0" class="nav-menu-item greyHover">Archives</a>
+				</li>
 			</div>
 		</ul>
 	</nav>
