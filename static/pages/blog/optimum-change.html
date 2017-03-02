@@ -1,0 +1,52 @@
+<div class="blog-post">
+<h2 class="work-title blog-title">Optimum Change</h2>
+<h3 class="blog-date">05/11/2016</h3>
+
+<p>Below are 2 functions that will return the optimal amount of change for a given amount out of £1, 50p, 20p, 10p, 5p, 2p and 1p coins. The first function returns the optimal amount, whereas the second function returns the optimal amount from a finite amount of coins, here defined in the array 'quantities'.</p>
+<p>If there are not enough coins to make up the desired amount the function will not return any coins and it will not remove any remaining coins, instead it will just print the message 'insufficient coinage'.
+
+<p>JavaScript Code</p><br>
+<pre class="code-pre"><code data-language="JavaScript">
+var coins = [100, 50, 20, 10, 5, 2, 1];
+var quantities = [11, 24, 0, 99, 5, 2, 11];
+
+var unlimitedCoins = function(amount) {
+	var change = [];
+	var total = 0;
+
+	coins.forEach(function(coin) {
+		while (total + coin <= amount) {
+			change.push(coin);
+			total += coin;
+		}
+	});
+	return change;
+};
+
+var limitedCoins = function(amount) {
+	var change = [];
+	var total = 0;
+	var origionalQuantity = _.clone(quantities);
+	coins.forEach(function(coin, coinIndex) {
+		while (total + coin <= amount && quantities[coinIndex] > 0) {
+			quantities[coinIndex]--;
+			change.push(coin)
+			total += coin;
+		}
+	});
+	var sum = 0;
+	change.forEach(function(coin){
+		sum += coin;
+	});
+	if (sum != amount) {
+		quantities = origionalQuantity;
+		console.log("insufficient coinage");
+		return [];
+	}
+	return change;
+}
+</code></pre>
+
+<p>To view a live demo of this code in action click <a href="http://kasper.vending.s3-website-eu-west-1.amazonaws.com">here</a></p>
+
+</div>
