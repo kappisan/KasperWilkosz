@@ -54,6 +54,24 @@ svg {
   margin: auto;
 }
 
+.watermark {
+  width: 100%;
+  margin: auto;
+  left: 0;
+  right: 0;
+}
+
+.watermark h1 {
+    font-size: 92px;
+    text-align: center;
+    color: #333;
+}
+.watermark h2 {
+    margin-top: 40px;
+    font-size: 42px;
+    text-align: center;
+    color: #333;
+}
 
 .cool {
   font-family: coolvetica !important;
